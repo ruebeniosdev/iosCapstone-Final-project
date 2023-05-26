@@ -12,7 +12,7 @@ struct Hero: View {
     var body: some View {
         VStack {
             HStack {
-                VStack {
+                VStack(spacing: 10) {
                     Text("Little Lemon")
                         .foregroundColor(Color.primaryColor2)
                         .font(.displayFont())
@@ -28,13 +28,15 @@ struct Hero: View {
                     .foregroundColor(.white)
                     .font(.leadText())
                     .frame(maxWidth: .infinity, alignment: .leading)
+                    
                 }
-                Image("hero-image")
+                Image("Hero image")
                     .resizable()
                     .aspectRatio( contentMode: .fill)
                     .frame(maxWidth: 120, maxHeight: 140)
                     .clipShape(Rectangle())
                     .cornerRadius(16)
+                  
             }
         }
     }

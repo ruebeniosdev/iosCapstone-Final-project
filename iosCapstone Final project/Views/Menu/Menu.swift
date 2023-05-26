@@ -18,112 +18,115 @@ struct Menu: View {
     @State var mainsIsEnabled = true
     @State var dessertsIsEnabled = true
     @State var drinksIsEnabled = true
-    @State var selectedTab = "all" // Added selectedTab state variable
+    @State var selectedTab = "Starters" // Added selectedTab state variable
     @State var loaded = false
     var body: some View {
         NavigationStack {
             VStack {
                 VStack {
-                    if !isKeyboardVisible {
-                        withAnimation() {
-                            Hero()
-                                .frame(maxHeight: 180)
+                    // header
+                    HStack {
+                        Spacer()
+                        Image("Logo")
+                        Spacer()
+                        NavigationLink {
+                            UserProfile()
+                                .navigationBarBackButtonHidden()
+                        } label: {
+                            Image("Profile")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 30, height: 30)
                         }
                     }
-                    CustomSearch(searchText: $searchText)
-                    //.textFieldStyle(.roundedBorder)
-                }
-                .padding()
-                .background(Color.primaryColor1)
-                
-                Text("ORDER FOR DELIVERY!")
-                    .font(.sectionTitle())
-                    .foregroundColor(.highlightColor2)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.top)
-                    .padding(.leading)
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 20) {
-                        HStack(spacing: 20) {
-                            Button("All") {
-                                selectedTab = "all"
-                                getMenuData()
-                            }
-                            .fontWeight(.bold)
-                            .foregroundColor(selectedTab == "all" ? Color.white : .secondary)
-                            .padding(.horizontal, 8)
-                            .padding(.vertical, 12)
-                            .background(
-                                selectedTab == "all" ?  Color.primaryColor1 : Color.highlightColor1
-                            )
-                            .cornerRadius(16)
-                            
-                            
-                            Button("Starters") {
-                                selectedTab = "starters"
-                                getMenuData()
-                            }
-                            .foregroundColor(selectedTab == "starters" ? Color.white : .secondary)
-                            .padding(.horizontal, 8)
-                            .padding(.vertical, 12)
-                            .background(
-                                selectedTab == "starters" ?  Color.primaryColor1 : Color.highlightColor1
-                            )
-                            .cornerRadius(16)
-                            
-                            Button("Mains") {
-                                selectedTab = "mains"
-                                getMenuData()
-                            }
-                            .foregroundColor(selectedTab == "mains" ? Color.white : .secondary)
-                            .padding(.horizontal, 8)
-                            .padding(.vertical, 12)
-                            .background(
-                                selectedTab == "mains" ?  Color.primaryColor1 : Color.highlightColor1
-                            )
-                            .cornerRadius(16)
-                            
-                            Button("Desserts") {
-                                selectedTab = "desserts"
-                                getMenuData()
-                                
-                            }
-                            .foregroundColor(selectedTab == "desserts" ? Color.white : .secondary)
-                            .padding(.horizontal, 8)
-                            .padding(.vertical, 12)
-                            .background(
-                                selectedTab == "desserts" ? Color.primaryColor1 : Color.highlightColor1
-                            )
-                            .cornerRadius(16)
-                            
-                            Button("Drinks") {
-                                selectedTab = "drinks"
-                                getMenuData()
-                            }
-                            .foregroundColor(selectedTab == "drinks" ? Color.white : .secondary)
-                            .padding(.horizontal, 8)
-                            .padding(.vertical, 12)
-                            .background(
-                                selectedTab == "drinks" ? Color.primaryColor1 : Color.highlightColor1
-                            )
-                            .cornerRadius(16)
-                        }
-                        //.padding(.horizontal)
-                    }
-                    //.toggleStyle(MyToggleStyle())
                     .padding(.horizontal)
-                }
-                FetchedObjects(predicate: buildPredicate(selectedTab: selectedTab),
-                               sortDescriptors: buildSortDescriptors()) {
-                    (dishes: [Dish]) in
-                    List(dishes) { dish in
-                        NavigationLink(destination: DetailItem(dish: dish)) {
-                            FoodItem(dish: dish)
-                        }
+                    // image
+                    VStack {
+                        Hero()
+                        CustomSearch(searchText: $searchText)
                     }
-                    .listStyle(.plain)
+                    .padding()
+                    .background(Color.primaryColor1)
+                    
+                    
+                    Text("ORDER FOR DELIVERY!")
+                        .font(.sectionTitle())
+                        .foregroundColor(.highlightColor2)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.top)
+                        .padding(.leading)
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 20) {
+                            HStack(spacing: 20) {
+                                Button("Starters") {
+                                    selectedTab = "starters"
+                                    getMenuData()
+                                }
+                                .fontWeight(.bold)
+                                .foregroundColor(Color.primaryColor1)
+                                .padding(.horizontal, 8)
+                                .padding(.vertical, 12)
+                                .background(
+                                    selectedTab == "starters" ?  Color.primaryColor2 : Color.highlightColor1
+                                )
+                                .cornerRadius(16)
+                                
+                                Button("Mains") {
+                                    selectedTab = "mains"
+                                    getMenuData()
+                                }
+                                .fontWeight(.bold)
+                                .foregroundColor(Color.primaryColor1)
+                                .padding(.horizontal, 8)
+                                .padding(.vertical, 12)
+                                .background(
+                                    selectedTab == "mains" ?  Color.primaryColor2 : Color.highlightColor1
+                                )
+                                .cornerRadius(16)
+                                
+                                Button("Desserts") {
+                                    selectedTab = "desserts"
+                                    getMenuData()
+                                    
+                                }
+                                .fontWeight(.bold)
+                                .foregroundColor(Color.primaryColor1)
+                                .padding(.horizontal, 8)
+                                .padding(.vertical, 12)
+                                .background(
+                                    selectedTab == "desserts" ? Color.primaryColor2 : Color.highlightColor1
+                                )
+                                .cornerRadius(16)
+                                
+                                Button("Drinks") {
+                                    selectedTab = "drinks"
+                                    getMenuData()
+                                }
+                                .fontWeight(.bold)
+                                .foregroundColor(Color.primaryColor1)
+                                .padding(.horizontal, 8)
+                                .padding(.vertical, 12)
+                                .background(
+                                    selectedTab == "drinks" ? Color.primaryColor2 : Color.highlightColor1
+                                )
+                                .cornerRadius(16)
+                            }
+                        }
+                        .padding(.horizontal)
+                    }
+                    FetchedObjects(predicate: buildPredicate(selectedTab: selectedTab),
+                                   sortDescriptors: buildSortDescriptors()) {
+                        (dishes: [Dish]) in
+                        List(dishes) { dish in
+                            NavigationLink(destination: DetailItem(dish: dish)) {
+                                FoodItem(dish: dish)
+                            }
+                        }
+                        .listStyle(.plain)
+                    }
                 }
             }
+            
         }
         .onAppear {
             if !loaded {

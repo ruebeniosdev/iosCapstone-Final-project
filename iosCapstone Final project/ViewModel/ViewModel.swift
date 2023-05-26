@@ -26,6 +26,11 @@ class ViewModel: ObservableObject {
     @Published var phoneNumber = UserDefaults.standard.string(forKey: kPhoneNumber) ?? ""
     
     
+    @Published var orderStatuses = UserDefaults.standard.bool(forKey: kOrderStatuses)
+    @Published var passwordChanges = UserDefaults.standard.bool(forKey: kPasswordChanges)
+    @Published var specialOffers = UserDefaults.standard.bool(forKey: kSpecialOffers)
+    @Published var newsletter = UserDefaults.standard.bool(forKey: kNewsletter)
+    
     
     
     @Published var errorMessageShow = false

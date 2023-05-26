@@ -20,6 +20,12 @@ struct LogOutButton: ButtonStyle {
     }
 }
 
+struct checkmark: ToggleStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        
+    }
+}
+
 struct ButtonStyleYellowColorWide: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
