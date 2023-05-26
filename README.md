@@ -29,5 +29,7 @@ The Restaurant Ordering App showcases essential skills and concepts learned thro
 By developing this Restaurant Ordering App, I have gained hands-on exp![Simulator Screenshot - iPhone 14 Pro - 2023-05-26 at 18 12 53](https://github.com/ruebeniosdev/iosCapstone-Final-project/assets/104309954/0b3f8e96-a7c8-4f11-a085-d1c8da29aa5c)
 erience in building a complete iOS application from scratch, incorporating key ![Simulator Screenshot - iPhone 14 Pro - 2023-05-26 at 18 13 06](https://github.com/ruebeniosdev/iosCapstone-Final-project/assets/104309954/cec23e77-ee1f-4e68-8d2c-d841cc5d12a8)
 features and functionalities that provide value to restaurant customers.
-![Simulator Screenshot - iPhone 14 Pro - 2023-05-26 at 18 12 12](https://github.com/ruebeniosdev/iosCapstone-Final-project/assets/104309954/e034fbf9-2ecb-492e-89d7-60991da42603)
+![Simulator Screenshot - iPhone 14 Pro - 2023-05-26 at 18 12 12](https://github.com/ruebe![Simulator Screenshot - iPhone 14 Pro - 2023-05-26 at 20 09 13](https://github.com/ruebeniosdev/iosCapstone-Final-project/assets/104309954/faa84c2d-fecd-49b8-91ef-b9c09671ad26)
+![Simulator Screenshot - iPhone 14 Pro - 2023-05-26 at 20 09 32](https://github.com/ruebeniosdev/iosCapstone-Final-project/assets/104309954/1a1ad70b-6e0d-45c3-81a8-e42060dcd4ef)
+niosdev/iosCapstone-Final-project/assets/104309954/e034fbf9-2ecb-492e-89d7-60991da42603)
 ![Simulator Screenshot - iPhone 14 Pro - 2023-05-26 at 18 12 16](https://github.com/ruebeniosdev/iosCapstone-Final-project/assets/104309954/90ccba5e-a180-4f3e-aa57-450eeae3e99f)
